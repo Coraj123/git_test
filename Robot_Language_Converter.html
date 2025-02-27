@@ -8,6 +8,7 @@
 
   <body>
     <h1>Robot Language Converter</h1>
+    <button id="startButton">Start the Converter</button>
     <script>
       function mainMenu() {
         return prompt("Enter the number 1, 2, or 3, or input the word 'Exit'");
@@ -29,31 +30,40 @@
       let stringPrompt = "";
       let robotLang = "";
 
-      // Keep prompting the user until they enter "Exit"
-      while (userString !== "Exit" && userString !== "exit") {
-        userString = mainMenu();
+      function runConverter() {
+        // Keep prompting the user until they enter "Exit"
+        while (userString !== "Exit" && userString !== "exit") {
+          userString = mainMenu();
 
-        if (userString == "1") {
-          stringPrompt = prompt("Please enter a String");
-          if (!stringPrompt) {
-            console.log("You need to enter something");
-          }
-        } else if (userString == "2") {
-          if (stringPrompt) {
-            robotLang = robotLanguage(stringPrompt);
-            console.log("String Converted");
-          } else {
-            console.log("You need to first enter a String");
-          }
-        } else if (userString == "3") {
-          if (robotLang) {
-            console.log(robotLang);
-          } else {
-            console.log("You need to first convert your String");
+          if (userString == "1") {
+            do {
+              stringPrompt = prompt("Please enter a String");
+              if (!stringPrompt) {
+                console.log("You need to enter something");
+              }
+            } while (!stringPrompt);
+          } else if (userString == "2") {
+            if (stringPrompt) {
+              robotLang = robotLanguage(stringPrompt);
+              console.log("String Converted");
+            } else {
+              console.log("You need to first enter a String");
+            }
+          } else if (userString == "3") {
+            if (robotLang) {
+              console.log(robotLang);
+              stringPrompt = "";
+              robotLang = "";
+            } else {
+              console.log("You need to first convert your String");
+            }
           }
         }
+        console.log("Thanks for using the ROBOT Language Converter!");
       }
-      console.log("Thanks for using the ROBOT Language Converter!");
+      document
+        .getElementById("startButton")
+        .addEventListener("click", runConverter);
     </script>
   </body>
 </html>
