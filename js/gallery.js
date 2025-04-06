@@ -48,8 +48,11 @@ function getImageFilenameWithoutThumbnail(url) {
 
 function formatDescription(filename) {
   return filename
-    .replace(".jpg", "") // remove file extension
-    .replace(/[_-]/g, " "); // replace underscores and dashes with spaces
+    .replace(".jpg", "")
+    .replace(/[_-]/g, " ")
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 function clickEventHandling(img) {
