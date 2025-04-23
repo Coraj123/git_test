@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kardashian Badge Quiz</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Kardashian Badge Quiz</h1>
+      </header>
+
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#quizForm">Quiz</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="ad">Advertisement Space</div>
+      </aside>
+
+      <main class="content">
+        <form id="quizForm" novalidate>
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="field">
+              <label for="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                onfocus="showHint(this)"
+                onblur="validateData(this)"
+              />
+              <span id="firstNameHint" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                onfocus="showHint(this)"
+                onblur="validateData(this)"
+              />
+              <span id="lastNameHint" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                onfocus="showHint(this)"
+                onblur="validateData(this)"
+              />
+              <span id="phoneHint" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                onfocus="showHint(this)"
+                onblur="validateData(this)"
+              />
+              <span id="emailHint" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="website">Website URL</label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                onfocus="showHint(this)"
+                onblur="validateData(this)"
+              />
+              <span id="websiteHint" class="hint"></span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Survey Questions</legend>
+
+            <div class="question">
+              <p>1. What's your favorite weekend activity?</p>
+              <label
+                ><input type="radio" name="q1" value="kourtney" /> Brunch with
+                friends</label
+              ><br />
+              <label
+                ><input type="radio" name="q1" value="khloe" /> Workout
+                session</label
+              ><br />
+              <label
+                ><input type="radio" name="q1" value="kim" /> Fashion
+                shopping</label
+              ><br />
+              <label
+                ><input type="radio" name="q1" value="rob" /> Gaming
+                night</label
+              >
+            </div>
+
+            <div class="question">
+              <p>2. Which best describes you?</p>
+              <label
+                ><input type="radio" name="q2" value="kourtney" /> The
+                organizer</label
+              ><br />
+              <label
+                ><input type="radio" name="q2" value="khloe" /> The
+                motivator</label
+              ><br />
+              <label
+                ><input type="radio" name="q2" value="kim" /> The
+                influencer</label
+              ><br />
+              <label
+                ><input type="radio" name="q2" value="rob" /> The
+                wildcard</label
+              >
+            </div>
+          </fieldset>
+
+          <button type="submit">Submit</button>
+        </form>
+
+        <div id="badgeArea" class="badge-area"></div>
+      </main>
+
+      <footer>Created for DIG 3716c by first_name last_name</footer>
+    </div>
+
+    <script src="./process_form.js"></script>
+  </body>
+</html>
